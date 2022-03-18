@@ -130,7 +130,20 @@ const questions = [
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(genContent) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile("genREADME.md", genContent, err =>{
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve({
+                ok: true,
+                message: 'ReadMe Created'
+            })
+        })
+    })
+}
 
 // TODO: Create a function to initialize app
 function init() {}
