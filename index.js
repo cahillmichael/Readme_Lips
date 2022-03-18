@@ -2,7 +2,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
-const Choices = require('inquirer/lib/objects/choices');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -76,7 +75,7 @@ const questions = [
         name: "contribution",
         message: "How can others contribute?",
         validate: contributeInput => {
-            if(describeInput) {
+            if(contributeInput) {
                 return true;
             } else {
                 console.log("Tell us how we can help.");

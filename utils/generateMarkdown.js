@@ -2,11 +2,11 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if(license === 'None') {
-    return ''
+    return ``
   } else if (license === 'MPL') {
     return `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`
   } else if (license === 'Apache') {
-    return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
+    return `[![License:](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
   }
 };
 
@@ -14,11 +14,11 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if(license === 'None') {
-    return ''
+    return ``
   } else if (license === 'MPL') {
-    return `https://opensource.org/licenses/MPL-2.0`
+    return 'https://opensource.org/licenses/MPL-2.0'
   } else if (license === 'Apache') {
-    return `https://opensource.org/licenses/Apache-2.0`
+    return 'https://opensource.org/licenses/Apache-2.0'
   }
 };
 
@@ -26,17 +26,16 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if(license === 'None') {
-    return ''
+    return ``
   } else if (license === 'MPL') {
-    return `
-    ## License
+    return `## License
+
     ${renderLicenseLink(license)}
 
     This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
     `
   } else if (license === 'Apache') {
-    return `
-    ## License
+    return ` ## License
     ${renderLicenseLink(license)}
 
     Copyright 2022
@@ -51,16 +50,16 @@ function renderLicenseSection(license) {
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
-   limitations under the License.
-    `
+   limitations under the License.`
   }
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
-  # ${data.title}  
-    ${renderLicenseBadge(data.license)}
+  # ${data.title}
+  
+  ${renderLicenseBadge(data.license)}
   
   ## Description  
   ${data.description}  
