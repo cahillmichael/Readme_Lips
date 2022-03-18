@@ -66,9 +66,9 @@ const questions = [
 //licenses
     {
         type: "list",
-        name: "licenses",
+        name: "license",
         message: "Select a license from the list.",
-        choices: ['MIT', 'Mozilla Public', 'Apache', 'None'],
+        choices: ['MPL', 'Apache', 'None'],
     },
 //contribution guidelines
     {
