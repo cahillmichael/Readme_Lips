@@ -2,7 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
-const { title } = require('process');
+const Choices = require('inquirer/lib/objects/choices');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -50,7 +50,7 @@ const questions = [
         }
     },
 //usage information
-        {
+    {
         type: "input",
         name: "usage",
         message: "How is your application used?",
@@ -62,6 +62,13 @@ const questions = [
                 return false;
             }
         }
+    },
+//licenses
+    {
+        type: "list",
+        name: "licenses",
+        message: "Select a license from the list.",
+        choices: ['MIT', 'Mozilla Public', 'Apache', 'None'],
     },
 //contribution guidelines
     {
