@@ -146,7 +146,11 @@ function writeToFile(genContent) {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() { 
+        inquirer.prompt(questions)
+        .then((data) => {return generateMarkdown(data);})
+        .then((genContent) => writeToFile(genContent))
+};
 
 // Function call to initialize app
 init();
